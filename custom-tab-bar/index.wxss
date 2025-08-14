@@ -1,0 +1,4 @@
+/* custom-tab-bar/index.wxss */
+.td-tab-bar {
+  padding-bottom: env(safe-area-inset-bottom);
+}
