@@ -1,0 +1,57 @@
+# 微信开发者工具生成的文件
+.project
+.project.private
+.project.miniprogram
+.temp
+.svn
+.DS_Store
+Thumbs.db
+
+# 编译生成的文件
+/miniprogram_npm/
+/miniprogram_dist/
+/dist/
+/build/
+
+# 日志文件
+logs/
+*.log
+
+# 本地配置文件
+.local
+.project.local
+*.local.json
+
+# 临时文件
+temp/
+tmp/
+
+# node_modules目录
+node_modules/
+
+# 缓存文件
+.cache/
+.eslintcache
+
+# 编辑器配置文件(可选，如果团队共享则不忽略)
+.idea/
+.vscode/
+*.sublime-*
+
+# 环境变量文件
+.env
+.env.*
+!.env.example
+
+# 微信小程序上传时生成的源地图文件
+*.js.map
+*.wxss.map
+
+# 自定义组件的临时文件
+components/**/*.temp.js
+components/**/*.temp.wxml
+components/**/*.temp.wxss
+
+# 测试相关文件
+__tests__/
+coverage/
