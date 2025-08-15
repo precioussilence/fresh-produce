@@ -1,3 +1,76 @@
 <!--pages/home/home.wxml-->
 <custom-navbar title="首页" />
-<text>pages/home/home.wxml</text>
+<view class="home-container">
+  <view class="swiper-section">
+    <t-swiper
+      current="{{swiper.current}}"
+      autoplay="{{swiper.autoplay}}"
+      duration="{{swiper.duration}}"
+      interval="{{swiper.interval}}"
+      list="{{swiper.swiperList}}"
+      navigation="{{ swiper.navigation }}"
+    />
+  </view>
+  <view class="category-matrix-section">
+    <t-grid column="{{categoryMatrix.column}}" theme="card">
+      <t-grid-item
+        wx:for="{{categoryMatrix.itemList}}"
+        wx:key="index"
+        t-class-image="{{item.imageClass}}"
+        text="{{item.title}}"
+        image="{{item.imageUrl}}"
+        data-title="{{item.title}}"
+        data-index="{{index}}"
+        bind:click="onMatrixTabClick"
+      />
+    </t-grid>
+  </view>
+  <view class="categrory-tab-section">
+    <t-tabs
+      defaultValue="{{categoryTab.defaultTab}}"
+      theme="card"
+      bind:change="onTabsChange"
+      bind:click="onTabsClick"
+    >
+      <t-tab-panel
+        wx:for="{{categoryTab.itemList}}"
+        wx:key="index"
+        label="{{item.label}}"
+        value="{{index}}"
+      />
+    </t-tabs>
+  </view>
+  <view class="goods-list-section">
+    <t-cell-group theme="card">
+      <block wx:for="{{goodsList}}" wx:key="index">
+        <t-cell
+          hover
+          arrow="false"
+          data-id="{{item.id}}"
+          bind:click="onGoodsClick"
+          t-class="goods-cell"
+        >
+          <view slot="left-icon" class="goods-left">
+            <view class="goods-tag">{{item.tag}}</view>
+            <t-image src="{{item.image}}" mode="aspectFill" t-class="goods-image" />
+          </view>
+          <view slot="title" class="goods-right">
+            <view class="goods-title">{{item.title}}</view>
+            <view class="goods-bottom">
+              <view class="goods-price-info">
+                <view class="goods-price">
+                  <text class="goods-price-symbol">¥</text>{{item.price}}
+                </view>
+                <view class="goods-original-price">¥{{item.originalPrice}}</view>
+                <view class="goods-sold">已售{{item.soldCount}}件</view>
+              </view>
+              <view class="goods-cart">
+                <t-icon name="cart" size="48rpx" data-id="{{item.id}}" bind:click="onAddToCart" />
+              </view>
+            </view>
+          </view>
+        </t-cell>
+      </block>
+    </t-cell-group>
+  </view>
+</view>
