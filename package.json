@@ -1,5 +1,11 @@
 {
+  "scripts": {
+    "format": "prettier --write \"**/*.{js,ts,json,wxml,wxss}\""
+  },
   "dependencies": {
     "tdesign-miniprogram": "^1.10.0"
+  },
+  "devDependencies": {
+    "prettier": "^3.6.2"
   }
 }

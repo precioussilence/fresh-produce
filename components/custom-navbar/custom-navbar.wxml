@@ -1,5 +1,9 @@
 <!--components/custom-navbar/custom-navbar.wxml-->
-<t-navbar t-class-placeholder="t-navbar-placeholder" t-class-content="t-navbar-content" title="{{title}}">
+<t-navbar
+  t-class-placeholder="t-navbar-placeholder"
+  t-class-content="t-navbar-content"
+  title="{{title}}"
+>
   <view slot="capsule" class="custom-capsule">
     <t-icon
       size="40rpx"

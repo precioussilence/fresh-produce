@@ -6,7 +6,7 @@ Component({
   properties: {
     title: {
       type: String,
-      value: "",
+      value: '',
     },
   },
 
@@ -24,7 +24,7 @@ Component({
     },
     onGoHome() {
       wx.reLaunch({
-        url: "/pages/home/home",
+        url: '/pages/home/home',
       });
     },
   },
