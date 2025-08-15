@@ -1,2 +1,3 @@
 <!--pages/category/category.wxml-->
+<custom-navbar title="分类"/>
 <text>pages/category/category.wxml</text>

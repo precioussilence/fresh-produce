@@ -19,7 +19,7 @@ Component({
       },
       {
         pagePath: "pages/category/category",
-        icon: "cart",
+        icon: "catalog",
         text: "分类",
         label: "category",
       },

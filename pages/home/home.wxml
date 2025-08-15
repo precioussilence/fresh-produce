@@ -1,2 +1,3 @@
 <!--pages/home/home.wxml-->
+<custom-navbar title="首页"/>
 <text>pages/home/home.wxml</text>
