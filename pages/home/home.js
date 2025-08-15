@@ -151,6 +151,14 @@ Page({
     ],
   },
 
+  onSwiperClick(event) {
+    const { index } = event.detail;
+    wx.showToast({
+      title: `点击了轮播图：${index + 1}`,
+      icon: 'none',
+    });
+  },
+
   onMatrixTabClick(event) {
     const { title, index } = event.currentTarget.dataset;
     wx.showToast({
@@ -160,7 +168,11 @@ Page({
   },
 
   onTabsChange(event) {
-    console.log(`Change tab, tab-panel value is ${event.detail.value}.`);
+    const { value } = event.detail;
+    wx.showToast({
+      title: `切换了分类：${value + 1}`,
+      icon: 'none',
+    });
   },
 
   onTabsClick(event) {
@@ -217,15 +229,30 @@ Page({
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh() {},
+  onPullDownRefresh() {
+    setTimeout(() => {
+      wx.stopPullDownRefresh();
+    }, 1000);
+  },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom() {},
+  onReachBottom() {
+    wx.showToast({
+      title: '加载更多商品',
+      icon: 'loading',
+      duration: 1000,
+    });
+  },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage() {},
+  onShareAppMessage() {
+    return {
+      title: '生鲜小程序',
+      path: '/pages/home/home',
+    };
+  },
 });
