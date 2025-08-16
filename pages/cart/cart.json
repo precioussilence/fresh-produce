@@ -1,5 +1,14 @@
 {
   "usingComponents": {
-    "custom-navbar": "/components/custom-navbar/custom-navbar"
+    "custom-navbar": "/components/custom-navbar/custom-navbar",
+    "t-empty": "tdesign-miniprogram/empty/empty",
+    "t-checkbox": "tdesign-miniprogram/checkbox/checkbox",
+    "t-checkbox-group": "tdesign-miniprogram/checkbox-group/checkbox-group",
+    "t-button": "tdesign-miniprogram/button/button",
+    "t-stepper": "tdesign-miniprogram/stepper/stepper",
+    "t-icon": "tdesign-miniprogram/icon/icon",
+    "t-image": "tdesign-miniprogram/image/image",
+    "t-cell": "tdesign-miniprogram/cell/cell",
+    "t-cell-group": "tdesign-miniprogram/cell-group/cell-group"
   }
 }

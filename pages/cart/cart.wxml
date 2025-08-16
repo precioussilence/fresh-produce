@@ -1,3 +1,91 @@
 <!--pages/cart/cart.wxml-->
 <custom-navbar title="购物车" />
-<text>pages/cart/cart.wxml</text>
+<block wx:if="{{cartItems.length === 0}}">
+  <view class="cart-container">
+    <view class="empty-cart">
+      <t-empty icon="cart" description="购物车还是空的">
+        <t-button slot="action" theme="primary" size="medium">去逛逛</t-button>
+      </t-empty>
+    </view>
+  </view>
+</block>
+<block wx:else>
+  <view class="cart-container">
+    <view class="header-section">
+      <view class="address-section" bindtap="goToAddress">
+        <view class="address-icon">
+          <t-icon name="location" size="40rpx" />
+        </view>
+        <view class="address-detail"> {{address.detail}} </view>
+        <view class="address-arrow">
+          <t-icon name="chevron-right" size="40rpx" />
+        </view>
+      </view>
+      <view class="edit-btn" bindtap="toggleEditMode">
+        <text>{{isEditMode ? '完成' : '编辑'}}</text>
+      </view>
+    </view>
+    <view class="goods-section">
+      <t-cell-group theme="card">
+        <t-cell wx:for="{{cartItems}}" wx:key="index" bordered="{{true}}" hover="{{false}}">
+          <view slot="title" class="item-content">
+            <view class="item-checkbox">
+              <t-checkbox
+                value="{{item.selected}}"
+                bind:change="toggleSelectItem"
+                t-class-icon="checkbox-icon"
+                data-id="{{item.id}}"
+              />
+            </view>
+            <view class="item-image">
+              <t-image src="{{item.image}}" width="160rpx" height="160rpx" shape="round" />
+            </view>
+            <view class="item-info">
+              <view class="item-title">{{item.title}}</view>
+              <view class="item-bottom">
+                <view class="item-price">¥{{item.price}}</view>
+                <view class="item-count">
+                  <t-stepper
+                    value="{{item.count}}"
+                    min="1"
+                    max="{{item.stock}}"
+                    theme="filled"
+                    bind:change="onCountChange"
+                    data-id="{{item.id}}"
+                  />
+                </view>
+              </view>
+            </view>
+          </view>
+          <view
+            slot="right-icon"
+            wx:if="{{isEditMode}}"
+            class="item-delete"
+            bindtap="deleteItem"
+            data-id="{{item.id}}"
+          >
+            <t-icon name="delete" size="40rpx" color="#fa4126" />
+          </view>
+        </t-cell>
+      </t-cell-group>
+    </view>
+    <view class="checkout-section">
+      <t-cell-group theme="card">
+        <t-cell bordered="{{true}}" hover="{{false}}">
+          <view slot="title" class="checkout-left">
+            <view class="select-all">
+              <t-checkbox value="{{allSelected}}" bind:change="toggleSelectAll" label="全选" />
+            </view>
+            <view class="total-amount">
+              <text>合计：</text>
+              <text class="price">¥{{totalAmount}}</text>
+            </view>
+          </view>
+          <view slot="note" class="checkout-right">
+            <t-button theme="primary" size="medium" bind:tap="goToCheckout">去结算</t-button>
+          </view>
+        </t-cell>
+      </t-cell-group>
+    </view>
+  </view>
+</block>
