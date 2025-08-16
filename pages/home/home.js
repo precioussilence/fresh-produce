@@ -115,7 +115,7 @@ Page({
       {
         id: 1,
         title: '新鲜红富士苹果 5kg装',
-        image: 'https://img.yzcdn.cn/vant/cat.jpeg',
+        image: 'https://images.pexels.com/photos/3487715/pexels-photo-3487715.jpeg',
         price: 29.9,
         originalPrice: 39.9,
         soldCount: 999,
@@ -124,7 +124,7 @@ Page({
       {
         id: 2,
         title: '有机生菜 500g',
-        image: 'https://img.yzcdn.cn/vant/cat.jpeg',
+        image: 'https://images.pexels.com/photos/3487715/pexels-photo-3487715.jpeg',
         price: 12.9,
         originalPrice: 15.9,
         soldCount: 568,
@@ -133,7 +133,7 @@ Page({
       {
         id: 3,
         title: '新鲜三文鱼 300g',
-        image: 'https://img.yzcdn.cn/vant/cat.jpeg',
+        image: 'https://images.pexels.com/photos/3487715/pexels-photo-3487715.jpeg',
         price: 59.9,
         originalPrice: 79.9,
         soldCount: 325,
@@ -142,7 +142,7 @@ Page({
       {
         id: 4,
         title: '黑猪五花肉 500g',
-        image: 'https://img.yzcdn.cn/vant/cat.jpeg',
+        image: 'https://images.pexels.com/photos/3487715/pexels-photo-3487715.jpeg',
         price: 45.8,
         originalPrice: 55.8,
         soldCount: 782,

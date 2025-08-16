@@ -65,22 +65,22 @@
     <view class="recommend-banner">
       <view class="banner-text">为你推荐</view>
     </view>
-    <view class="recommend-products">
+    <view class="recommend-goods">
       <view
-        class="product-item"
-        wx:for="{{recommendProducts}}"
+        class="goods-item"
+        wx:for="{{recommendGoods}}"
         wx:key="index"
-        bind:tap="goToProductDetail"
+        bind:tap="goToGoodsDetail"
         data-id="{{item.id}}"
       >
-        <view class="product-card">
-          <view class="product-image">
-            <t-image src="{{item.image}}" mode="aspectFill" width="100%" height="200rpx" />
+        <view class="goods-card">
+          <view>
+            <t-image src="{{item.image}}" mode="aspectFill" t-class="goods-image" />
           </view>
-          <view class="product-info">
-            <view class="product-title">{{item.title}}</view>
-            <view class="product-price">¥{{item.price}}</view>
-            <view class="product-sold">已售{{item.soldCount}}件</view>
+          <view class="goods-info">
+            <view class="goods-title">{{item.title}}</view>
+            <view class="goods-price">¥{{item.price}}</view>
+            <view class="goods-sold">已售{{item.soldCount}}件</view>
           </view>
         </view>
       </view>

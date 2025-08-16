@@ -47,7 +47,7 @@ Page({
       { icon: 'mail', text: '意见反馈', url: '/pages/feedback/feedback' },
       { icon: 'setting', text: '设置', url: '/pages/setting/setting' },
     ],
-    recommendProducts: [
+    recommendGoods: [
       {
         id: 1,
         image: 'https://images.pexels.com/photos/7542051/pexels-photo-7542051.jpeg',
@@ -123,10 +123,10 @@ Page({
     });
   },
 
-  goToProductDetail(e) {
+  goToGoodsDetail(e) {
     const { id } = e.currentTarget.dataset;
     wx.navigateTo({
-      url: `/pages/product/detail?id=${id}`,
+      url: `/pages/goods/detail?id=${id}`,
     });
     wx.showToast({
       title: `打开-商品${id}`,
