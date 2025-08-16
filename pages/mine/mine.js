@@ -25,7 +25,7 @@ Page({
         url: '/pages/order/list?type=waitPay',
       },
       {
-        icon: 'deliver',
+        icon: 'undertake-delivery',
         text: '待配送',
         badge: 1,
         url: '/pages/order/list?type=waitDelivery',
@@ -38,14 +38,14 @@ Page({
       },
     ],
     services: [
-      { icon: 'coupon', text: '优惠券', url: '/pages/coupon/index' },
-      { icon: 'star', text: '商品收藏', url: '/pages/collect/index' },
-      { icon: 'service', text: '退款/售后', url: '/pages/refund/index' },
-      { icon: 'location', text: '收货地址', url: '/pages/address/index' },
-      { icon: 'chat', text: '官方客服', url: '/pages/service/index' },
-      { icon: 'discount', text: '超级满减', url: '/pages/discount/index' },
-      { icon: 'mail', text: '意见反馈', url: '/pages/feedback/index' },
-      { icon: 'setting', text: '设置', url: '/pages/setting/index' },
+      { icon: 'coupon', text: '优惠券', url: '/pages/coupon/coupon' },
+      { icon: 'star', text: '商品收藏', url: '/pages/collect/collect' },
+      { icon: 'service', text: '退款/售后', url: '/pages/refund/refund' },
+      { icon: 'location', text: '收货地址', url: '/pages/address/address' },
+      { icon: 'chat', text: '官方客服', url: '/pages/service/service' },
+      { icon: 'discount', text: '超级满减', url: '/pages/discount/discount' },
+      { icon: 'mail', text: '意见反馈', url: '/pages/feedback/feedback' },
+      { icon: 'setting', text: '设置', url: '/pages/setting/setting' },
     ],
     recommendProducts: [
       {
@@ -90,23 +90,36 @@ Page({
   },
 
   handleLogin() {
-    // 跳转到登录页面
     wx.navigateTo({
-      url: '/pages/login/index',
+      url: '/pages/login/login',
+    });
+    this.setData({
+      isLogin: true,
+      userInfo: {
+        avatarUrl: 'https://tdesign.gtimg.com/mobile/demos/avatar1.png',
+        nickName: '用户昵称',
+        id: '123456789',
+      },
     });
   },
 
   goToOrder(e) {
-    const { url } = e.currentTarget.dataset;
+    const { url, text } = e.currentTarget.dataset;
     wx.navigateTo({
       url: url,
+    });
+    wx.showToast({
+      title: `打开-${text}`,
     });
   },
 
   goToService(e) {
-    const { url } = e.currentTarget.dataset;
+    const { url, text } = e.currentTarget.dataset;
     wx.navigateTo({
       url: url,
+    });
+    wx.showToast({
+      title: `打开-${text}`,
     });
   },
 
@@ -114,6 +127,9 @@ Page({
     const { id } = e.currentTarget.dataset;
     wx.navigateTo({
       url: `/pages/product/detail?id=${id}`,
+    });
+    wx.showToast({
+      title: `打开-商品${id}`,
     });
   },
 
