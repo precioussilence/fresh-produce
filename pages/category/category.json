@@ -5,6 +5,7 @@
     "t-side-bar-item": "tdesign-miniprogram/side-bar-item/side-bar-item",
     "t-cell-group": "tdesign-miniprogram/cell-group/cell-group",
     "t-cell": "tdesign-miniprogram/cell/cell",
-    "t-image": "tdesign-miniprogram/image/image"
+    "t-image": "tdesign-miniprogram/image/image",
+    "t-icon": "tdesign-miniprogram/icon/icon"
   }
 }

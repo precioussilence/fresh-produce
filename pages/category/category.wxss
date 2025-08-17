@@ -106,4 +106,19 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  position: relative;
+}
+
+.goods-cart::after {
+  content: '';
+  position: absolute;
+  top: -10rpx;
+  right: -10rpx;
+  bottom: -10rpx;
+  left: -10rpx;
+}
+
+.goods-cart:active {
+  transform: scale(0.9);
+  transition: transform 0.1s ease;
 }

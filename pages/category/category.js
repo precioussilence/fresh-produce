@@ -110,6 +110,14 @@ Page({
     });
   },
 
+  onAddToCart(e) {
+    const { id } = e.currentTarget.dataset;
+    wx.showToast({
+      title: `添加商品${id}到购物车`,
+      icon: 'success',
+    });
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */

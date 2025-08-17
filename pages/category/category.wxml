@@ -27,7 +27,6 @@
       <t-cell-group>
         <block wx:for="{{goodsList}}" wx:key="index" wx:for-item="goods">
           <t-cell
-            hover
             arrow="false"
             data-id="{{goods.id}}"
             bind:click="onGoodsClick"
@@ -47,12 +46,7 @@
                   <view class="goods-sold">已售{{goods.soldCount}}件</view>
                 </view>
                 <view class="goods-cart">
-                  <t-icon
-                    name="cart"
-                    size="24rpx"
-                    data-id="{{goods.id}}"
-                    bind:click="onAddToCart"
-                  />
+                  <t-icon name="cart" size="36rpx" data-id="{{goods.id}}" catch:tap="onAddToCart" />
                 </view>
               </view>
             </view>
