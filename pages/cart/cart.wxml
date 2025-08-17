@@ -33,8 +33,8 @@
               <t-checkbox
                 value="{{item.selected}}"
                 bind:change="toggleSelectItem"
-                t-class-icon="checkbox-icon"
                 data-id="{{item.id}}"
+                t-class="custom-checkbox"
               />
             </view>
             <view class="item-image">
@@ -50,6 +50,7 @@
                     min="1"
                     max="{{item.stock}}"
                     theme="filled"
+                    size="small"
                     bind:change="onCountChange"
                     data-id="{{item.id}}"
                   />
@@ -74,7 +75,12 @@
         <t-cell bordered="{{true}}" hover="{{false}}">
           <view slot="title" class="checkout-left">
             <view class="select-all">
-              <t-checkbox value="{{allSelected}}" bind:change="toggleSelectAll" label="全选" />
+              <t-checkbox
+                value="{{allSelected}}"
+                bind:change="toggleSelectAll"
+                label="全选"
+                t-class="custom-checkbox"
+              />
             </view>
             <view class="total-amount">
               <text>合计：</text>

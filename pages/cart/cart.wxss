@@ -88,7 +88,7 @@
   margin-left: auto;
 }
 .item-delete {
-  padding: 20rpx;
+  padding: 10rpx;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -98,6 +98,10 @@
   bottom: 180rpx;
   left: 0;
   right: 0;
+  z-index: 100;
+}
+.custom-checkbox {
+  padding: 0 !important;
 }
 .checkout-left {
   display: flex;
